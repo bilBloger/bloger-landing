@@ -1,0 +1,8 @@
+[[redirects]]
+  from = "/m-landings/*"
+  to = "https://golden-bubblegum-1607d5.netlify.app/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/m-landings/*"
+  to = "/:splat"
