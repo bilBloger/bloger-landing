@@ -1,0 +1,62 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.languagePicker {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.currentLanguage {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.languages {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background: #131223;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  list-style: none;
+  z-index: 99;
+}
+
+.language {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    color: #fad370;
+  }
+  &:focus,
+  &.active {
+    color: #FFC42E;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include media("tablet", "laptop", "desktop") {
+    padding: 78px 0;
+  }
+}

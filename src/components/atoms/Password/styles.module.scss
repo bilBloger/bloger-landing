@@ -1,0 +1,47 @@
+@import 'src/styles/breakpoints';
+
+.passwordInput {
+  position: relative;
+  display: grid;
+  height: 44px;
+
+  @include media("tablet", "laptop", "desktop") {
+    height: 49px;
+  }
+
+  .input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #F4F6FB;
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #373E4A;
+    padding: 0 16px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: #A0A6B6;
+    }
+
+    &.invalid {
+      border: 1px solid #FFA127;
+    }
+  
+    &:focus {
+      outline: none;
+    }
+
+    @include media("tablet", "laptop", "desktop") {
+      height: 49px;
+    }
+  }
+
+  .eyeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

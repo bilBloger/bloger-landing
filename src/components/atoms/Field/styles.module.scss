@@ -1,0 +1,42 @@
+@import 'src/styles/breakpoints';
+
+.field {
+  position: relative;
+  display: grid;
+}
+.inline {
+  display: inline;
+}
+
+.input {
+  height: 44px;
+  background: transparent;
+  border: 2px solid #F4F6FB;
+  border-radius: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #373E4A;
+  padding: 0 16px;
+
+  &::placeholder {
+    color: #A0A6B6;
+  }
+
+  &.invalid {
+    border: 1px solid #FFA127;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @include media("tablet", "laptop", "desktop") {
+    height: 49px;
+  }
+}
+
+.error {
+  font-size: 12px;
+  color: #FFA127;
+}

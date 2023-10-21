@@ -1,0 +1,24 @@
+@import 'src/styles/breakpoints';
+
+.eyeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  height: 44px;
+  width: 60px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+
+  svg {
+    path {
+      fill: #A0A6B6;
+    }
+  }
+
+  @include media("tablet", "laptop", "desktop") {
+    height: 49px;
+  }
+}

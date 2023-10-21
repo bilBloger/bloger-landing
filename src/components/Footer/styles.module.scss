@@ -1,0 +1,98 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 16px;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: relative;
+
+  @include media("tablet") {
+    padding: 15px 50px;
+  }
+
+  @include media("laptop", "desktop") {
+    padding: 15px 180px;
+  }
+
+  @include media("tablet", "laptop", "desktop") {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    box-sizing: border-box;
+    z-index: 1;
+  }
+}
+
+.paymentSystems {
+  display: flex;
+  align-items: center;
+  column-gap: 26px;
+
+  @include media("laptop", "desktop") {
+    column-gap: 60px;
+  }
+
+  .ton {
+    display: none;
+    @include media("tablet", "laptop", "desktop") {
+      display: block;
+    }
+  }
+  .tonMobile {
+    @include media("tablet", "laptop", "desktop") {
+      display: none;
+    }
+  }
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+
+  a {
+    transition: .3s;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+
+  @include media("tablet", "laptop", "desktop") {
+    display: none;
+  }
+}
+.text {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.link {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}

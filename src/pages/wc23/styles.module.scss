@@ -1,0 +1,341 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.main {
+  position: relative;
+  padding-top: 330px;
+
+  &.openModal {
+    position: fixed;
+  }
+
+  @include media("tablet", "laptop", "desktop") {
+    padding-top: 90px;
+  }
+}
+
+.container {
+  min-height: 100vh;
+  background: radial-gradient(152.45% 40.58% at 50% 28.21%, #0C3A38 0%, #031217 100%);
+
+  @include media("tablet") {
+    padding: 0 50px;
+    position: relative;
+    background: transparent;
+  }
+
+  @include media("laptop", "desktop") {
+    padding: 0 88px;
+    position: relative;
+    background: transparent;
+  }
+}
+
+.images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+
+  @include media("tablet", "laptop", "desktop") {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.image {
+  display: none !important;
+
+  @include media("tablet", "laptop", "desktop") {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.imageMobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  @include media("tablet", "laptop", "desktop") {
+    display: none !important;
+  }
+}
+
+.content {
+  max-width: 630px;
+  // margin-left: auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  @include media("tablet", "laptop", "desktop") {
+    margin-bottom: 130px;
+  }
+
+  .logo {
+
+    svg {
+      @include media("mobile") {
+        width: 230px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.title {
+  text-align: center;
+  
+  .titleTop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    text-align: center;
+
+    .title1,
+    .title2 {
+      color: #FFF;
+      font-family: 'Inter';
+      font-size: 35px;
+      font-weight: 900;
+
+      @include media("tablet", "laptop", "desktop") {
+        font-size: 51.75px;
+      }
+    }
+    .title2 {
+      background: linear-gradient(180deg, #FFC42E 0%, #D38C00 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+    }
+  }
+
+  .titlePercent {
+    font-family: 'Inter';
+    font-size: 92px;
+    line-height: 100%;
+    font-weight: 900;
+    background: linear-gradient(180deg, #FFC42E 0%, #D38C00 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include media("tablet", "laptop", "desktop") {
+      font-size: 161.839px;
+    }
+  }
+
+  .title3 {
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: 900;
+
+    @include media("tablet", "laptop", "desktop") {
+      font-size: 28.919px;
+    }
+  }
+  .title4 {
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #FFC42E 0%, #E5791E 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+
+    @include media("tablet", "laptop", "desktop") {
+      font-size: 36.529px;
+    }
+  }
+}
+
+.blocks {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas: 'formBlock'
+                       'stepsBlock';
+
+  @include media("tablet", "laptop", "desktop") {
+    grid-template-areas: 'stepsBlock formBlock';
+    grid-template-columns: 210px auto;
+    grid-template-rows: 1fr;
+    gap: 8px;
+  }
+
+  .formBlock {
+    grid-area: formBlock;
+  }
+  
+  .stepsBlock {
+    grid-area: stepsBlock;
+    display: grid;
+    grid-template-columns: 100%;
+
+    @include media("tablet", "laptop", "desktop") {
+      gap: 8px;
+    }
+
+    @include media("mobile") {
+      background: #1E232D;
+      padding: 0 16px;
+    }
+
+    .step {
+      position: relative;
+      display: flex;
+      padding: 24px 24px 0;
+      box-sizing: border-box;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      background: #1E232D;
+
+      &:first-child {
+        border-top: 1px solid rgba(255, 255, 255, 0.16);
+      }
+
+      @include media("tablet", "laptop", "desktop") {
+        padding: 24px;
+        border: none;
+        border-radius: 16px;
+        justify-content: center;
+      }
+
+      .number {
+        color: #FFF;
+        text-align: center;
+        text-shadow: 2px 2px 8px #161A21;
+        font-family: 'Inter';
+        font-size: 48px;
+        font-style: italic;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+
+        @include media("tablet", "laptop", "desktop") {
+          position: absolute;
+          left: -4px;
+          top: -32px;
+          font-size: 72px;
+        }
+      }
+
+      .stepText {
+        color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        padding-bottom: 24px;
+
+        @include media("tablet", "laptop", "desktop") {
+          border: none;
+          padding: none;
+        }
+      }
+    }
+  }
+}
+
+.button {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+  gap: 12px;
+  height: 48px;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 30px;
+
+  background: #FFC42E;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1E232D;
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    background: #c99a23;
+  }
+
+  @include media("tablet", "laptop", "desktop") {
+    font-size: 20px;
+    line-height: 20px;
+    height: 64px;
+    margin-bottom: 60px;
+  }
+}
+
+.closeBtnModal {
+  display: none;
+}
+
+.rules {
+
+  h3 {
+    color: #1E232D;
+    font-family: 'Inter';
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .closeBtn {
+      display: flex;
+      width: 28px;
+      height: 28px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background: rgba(30, 35, 45, 0.05);
+      backdrop-filter: blur(1px);
+      transition: .3s;
+      
+      &:hover {
+        background: rgba(30, 35, 45, 0.1);
+      }
+    }
+  }
+
+  p {
+    color: #1E232D;
+    font-family: 'Fira Sans';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+}

@@ -1,0 +1,247 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.container {
+  padding: 0 16px;
+  min-height: 100vh;
+  background: radial-gradient(152.45% 40.58% at 50% 28.21%, #0C3A38 0%, #031217 100%);
+
+  @include media("tablet") {
+    padding: 0 50px;
+    position: relative;
+    background: transparent;
+  }
+
+  @include media("laptop", "desktop") {
+    padding: 0 88px;
+    position: relative;
+    background: transparent;
+  }
+}
+
+.images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+
+  @include media("tablet", "laptop", "desktop") {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.image {
+  display: none !important;
+
+  @include media("tablet", "laptop", "desktop") {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.imageMobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  @include media("tablet", "laptop", "desktop") {
+    display: none !important;
+  }
+}
+
+.content {
+  max-width: 890px;
+  // margin-left: auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 12px;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 93.9%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+
+  @include media("tablet", "laptop", "desktop") {
+    font-size: 42px;
+    color: #FFC42E;
+  }
+
+  .titleEnd {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 93.9%;
+    text-transform: uppercase;
+    color: #FFC42E;
+    
+    @include media("tablet", "laptop", "desktop") {
+      font-size: 100px;
+      color: #FFFFFF;
+    }
+  }
+}
+
+.rulesLink {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  border-bottom: 1px dashed;
+  display: block;
+  width: max-content;
+  margin: auto;
+  margin-bottom: 350px;
+  transition: .3s;
+
+  &:hover {
+    color: rgba(#fff, .7);
+  }
+
+  @include media("tablet", "laptop", "desktop") {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 26px;
+  }
+}
+.blocks {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-areas: 'stepsBlock'
+                       'formBlock';
+
+  @include media("tablet", "laptop", "desktop") {
+    grid-template-areas: 'formBlock'
+                         'stepsBlock';
+  }
+
+  .formBlock {
+    grid-area: formBlock;
+    padding-bottom: 85px;
+  
+    @include media("tablet", "laptop", "desktop") {
+      max-width: 450px;
+      width: 100%;
+      margin: auto auto 15px;
+      padding-bottom: unset;
+    }
+  }
+  
+  .stepsBlock {
+    grid-area: stepsBlock;
+    margin-bottom: 14px;
+
+    @include media("tablet", "laptop", "desktop") {
+      padding-bottom: 60px;
+    }
+  }
+}
+
+.button {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+  gap: 12px;
+  height: 48px;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 30px;
+
+  background: #FFC42E;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #1E232D;
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    background: #c99a23;
+  }
+
+  @include media("tablet", "laptop", "desktop") {
+    font-size: 20px;
+    line-height: 20px;
+    height: 64px;
+    margin-bottom: 60px;
+  }
+}
+
+.text {
+  max-width: 850px;
+  margin: auto;
+  background: #FFFFFF;
+  border-radius: 6px;
+  padding: 24px;
+  text-align: left;
+
+  p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    color: #1E232D;
+    margin: 0 0 20px;
+
+    @include media("tablet", "laptop", "desktop") {
+      font-size: 14px;
+    }
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #1E232D;
+    margin: 40px 0 20px;
+
+    @include media("tablet", "laptop", "desktop") {
+      font-size: 20px;
+    }
+  }
+
+  ul {
+    padding-left: 15px;
+    margin: 20px 0;
+
+    @include media("tablet", "laptop", "desktop") {
+      padding-left: 20px;
+    }
+  }
+
+  li {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    color: #1E232D;
+    margin-bottom: 12px;
+
+    @include media("tablet", "laptop", "desktop") {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,0 +1,236 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 0 15px;
+  z-index: 3;
+  position: relative;
+
+  @include media("tablet", "laptop", "desktop") {
+    padding: 20px 0 25px;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
+
+    @include media("tablet", "laptop", "desktop") {
+      column-gap: 32px;
+    }
+
+    .signUp {
+      padding: 12px 18px;
+      display: flex;
+      gap: 10px;
+      background-color: transparent;
+      border: 1px solid #FFC42E;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      color: #FFC42E;
+      align-items: center;
+      text-decoration: none;
+      transition: .7s;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: #FFC42E;
+        color: #000;
+      }
+
+      @include media("tablet", "laptop", "desktop") {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.container {
+  padding: 0 16px;
+  min-height: calc(100vh - 235px);
+
+  @include media("tablet") {
+    padding: 0 50px;
+    position: relative;
+    background: transparent;
+    min-height: 100vh;
+  }
+
+  @include media("laptop", "desktop") {
+    padding: 0 88px;
+    position: relative;
+    background: transparent;
+    min-height: 100vh;
+  }
+
+  .content {
+    max-width: 1146px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 44px;
+
+    .topBlock {
+      background: #1C1F2C;
+      box-shadow: 0px 4px 28px rgba(3, 3, 4, 0.2);
+      border-radius: 12px;
+      margin-bottom: 30px;
+      position: relative;
+
+      // .zeppelinAnimation {
+      //   display: none;
+
+      //   @include media("tablet", "laptop", "desktop") {
+      //     display: block;
+      //   }
+      // }
+
+      // .zeppelinAnimationMobile {
+      //   @include media("tablet", "laptop", "desktop") {
+      //     display: none;
+      //   }
+      // }
+    }
+
+    .bottomBlock {
+      padding: 24px 0;
+      background: #1C1F2C;
+      box-shadow: 0px 4px 28px rgba(3, 3, 4, 0.2);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 12px;
+
+      @include media("tablet", "laptop", "desktop") {
+        padding: 24px;
+      }
+
+      .button {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 24px;
+        color: #FFFFFF;
+        padding: 18px 56px;
+        gap: 10px;
+        background-color: #2ECD45;
+        border-radius: 12px;
+        display: flex;
+        text-decoration: none;
+        max-width: max-content;
+        margin: auto;
+        transition: .3s;
+        border: none;
+        text-transform: uppercase;
+        cursor: pointer;
+        animation: buttonAnimation 2s linear infinite;
+
+        &:hover {
+          background-color: #0d9221;
+        }
+
+        @include media("tablet", "laptop", "desktop") {
+          font-size: 42px;
+          line-height: 49px;
+          padding: 28px 78px;
+        }
+      }
+
+      .rulesLink {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: #FFFFFF;
+        text-decoration: none;
+        border-bottom: 1px dashed;
+        display: block;
+        width: max-content;
+        margin: auto;
+        transition: .3s;
+      
+        &:hover {
+          color: rgba(#fff, .7);
+        }
+      
+        @include media("tablet", "laptop", "desktop") {
+          font-size: 16px;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+}
+
+.registrationForm {
+  h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #1E232D;
+    padding: 0 25px;
+  }
+}
+
+.images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+
+  @include media("tablet", "laptop", "desktop") {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.image {
+  display: none !important;
+
+  @include media("tablet", "laptop", "desktop") {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.imageMobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  @include media("tablet", "laptop", "desktop") {
+    display: none !important;
+  }
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

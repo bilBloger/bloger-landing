@@ -1,0 +1,185 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.registerForm {
+  @include media("tablet", "laptop", "desktop") {
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    .fields {
+      padding: 0px 24px 20px;
+      background-color: #1E232D;
+      border-radius: 16px 16px 0 0;
+
+      @include media("tablet", "laptop", "desktop") {
+        border-radius: 16px;
+      }
+
+      .formTop {
+        position: relative;
+        padding-top: 60px;
+        box-sizing: border-box;
+        min-height: 250px;
+
+        .title {
+          position: relative;
+          z-index: 2;
+          color: #FFF;
+          text-align: center;
+          font-family: 'Inter';
+          font-size: 32px;
+          font-weight: 700;
+          line-height: 20px; /* 62.5% */
+        }
+
+        .image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          mix-blend-mode: multiply;
+          z-index: 1;
+        }
+
+        .text1,
+        .text2 {
+          text-align: right;
+          position: absolute;
+          z-index: 2;
+          font-family: 'Inter';
+          font-size: 44.446px;
+          font-weight: 900;
+          background: linear-gradient(180deg, #FFC42E 0%, #D38C00 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          text-transform: uppercase;
+        }
+
+        .text1 {
+          transform: rotate(15deg);
+          line-height: 100%;
+          top: 100px;
+          left: 50px;
+        }
+
+        .text2 {
+          transform: rotate(-5.841deg);
+          top: 160px;
+          right: 65px;
+          font-size: 66.993px;
+        }
+      }
+
+      .fieldWrapper {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        row-gap: 2px;
+
+        label {
+          color: rgba(255, 255, 255, 0.70);
+          font-family: 'Inter';
+          font-size: 13px;
+          font-weight: 400;
+        }
+
+        input {
+          border: none;
+          border-radius: 8px;
+          background: #151A24;
+          color: #fff !important;
+          font-size: 14px;
+          font-weight: 500;
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.70);
+          }
+
+          &:-webkit-autofill,
+          &:-webkit-autofill:focus {
+            transition: background-color 0s 600000s, color 0s 600000s;
+          }
+        }
+      }
+    }
+
+    .rulesLink {
+      display: flex;
+      max-width: max-content;
+      margin: auto;
+      padding-top: 16px;
+      color: #FFF;
+      text-align: center;
+      font-family: 'Inter';
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration-line: underline;
+      cursor: pointer;
+    }
+
+    .button {
+      display: flex;
+      height: 48px;
+      width: 100%;
+      padding: 0px 16px;
+      box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      border: 1px solid #FFC42E;
+      background: #FFC42E;
+      color: #1E232D;
+      text-align: center;
+      font-family: 'Inter';
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+        background: #1E232D;
+        color: #FFC42E;
+      }
+      
+
+      @include media("tablet", "laptop", "desktop") {
+      }
+    }
+
+    .rules {
+      color: rgba(#FFF, .7);
+      font-family: 'Inter';
+      font-size: 12px;
+      font-weight: 400;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      text-align: center;
+      justify-content: center;
+      margin: auto;
+      padding-top: 16px;
+
+      @include media("tablet", "laptop", "desktop") {
+        font-size: 14px;
+        line-height: 17px;
+      }
+
+      .link {
+        color: #FFF;
+        text-decoration: none;
+      }
+    }
+
+    .error {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #FFA127;
+    }
+  }
+}

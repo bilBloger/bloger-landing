@@ -1,0 +1,11 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.logo {
+  width: 160px;
+  height: auto;
+
+  @include media("mobile") {
+    width: 100px;
+  }
+}

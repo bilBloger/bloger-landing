@@ -1,0 +1,14 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.container {
+  padding: 0 30px;
+
+  @include media("tablet") {
+    padding: 0 50px;
+  }
+
+  @include media("laptop", "desktop") {
+    padding: 0 165px;
+  }
+}
