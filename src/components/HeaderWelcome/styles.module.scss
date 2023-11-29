@@ -1,0 +1,117 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 3;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 12px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 16px;
+  box-sizing: border-box;
+
+  @include media("tablet", "laptop", "desktop") {
+    flex-direction: row;
+  }
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 28px;
+
+  @include media("mobile") {
+    justify-content: center;
+  }
+
+  .worldcupLogo {
+    @include media("tablet", "laptop", "desktop") {
+      padding: 0 28px;
+      border-left: 1px solid rgba(#fff, 0.1);
+    }
+
+    svg {
+      @include media("mobile") {
+        width: 135px;
+      }
+    }
+  }
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+
+  @include media("mobile") {
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    width: 100%;
+  }
+
+  @include media("tablet", "laptop", "desktop") {
+    column-gap: 12px;
+  }
+}
+
+.login {
+  min-width: max-content;
+  width: 100%;
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 1px solid #FFC42E;
+  color: #FFC42E;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    background-color: #FFC42E;
+    color: #1E232D;
+  }
+}
+
+.register {
+  min-width: max-content;
+  width: 100%;
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 8px;
+  background-color: #FFC42E;
+  border: 1px solid #FFC42E;
+  color: #1E232D;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  transition: .3s;
+
+  &:hover {
+    background-color: transparent;
+    color: #FFC42E;
+  }
+}

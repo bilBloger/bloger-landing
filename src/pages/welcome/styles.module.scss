@@ -1,0 +1,349 @@
+@import "src/styles/variables.scss";
+@import "src/styles/breakpoints.scss";
+
+.main {
+  position: relative;
+  padding-top: 300px;
+
+  &.openModal {
+    position: fixed;
+    width: 100%;
+  }
+
+  @include media("tablet", "laptop", "desktop") {
+    padding-top: 90px;
+  }
+}
+
+.container {
+  padding: 0 16px;
+  background: radial-gradient(152.45% 40.58% at 50% 28.21%, #0C3A38 0%, #031217 100%);
+
+  @include media("tablet") {
+    padding: 0 50px;
+    position: relative;
+    background: transparent;
+  }
+
+  @include media("laptop", "desktop") {
+    padding: 0 88px;
+    position: relative;
+    background: transparent;
+  }
+}
+
+.images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
+
+  @include media("tablet", "laptop", "desktop") {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.image {
+  display: none !important;
+
+  @include media("tablet", "laptop", "desktop") {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+.imageMobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  @include media("tablet", "laptop", "desktop") {
+    display: none !important;
+  }
+}
+
+.content {
+  max-width: 1000px;
+  padding-bottom: 130px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  .logo {
+
+    svg {
+      @include media("mobile") {
+        width: 230px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.title {
+  margin: 0;
+  padding: 0 0 20px;
+
+  @include media("tablet", "laptop", "desktop") {
+    max-width: 1000px;
+    padding: 60px 0 36px;
+  }
+
+  .title1,
+  .title2 {
+    font-family: 'Inter';
+    font-size: 26px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #FFF;
+
+    @include media("tablet", "laptop", "desktop") {
+      font-size: 58px;
+    }
+  }
+  .title1 {
+    background: linear-gradient(180deg, #FFF 39.06%, #C0C0C0 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+  }
+
+  .title2 {
+    font-size: 40px;
+    text-shadow: 0px 4px 90px #000, 0px 4px 90px #000, 0px 4px 90px #000;
+  }
+}
+
+.cards {
+  max-width: 850px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 60px 0;
+
+  .card {
+    display: flex;
+    padding: 20px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    .cardTitle {
+      text-align: center;
+      font-family: 'Inter';
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: 0.88px;
+    }
+
+    .cardTextBig {
+      text-align: center;
+      font-family: 'Inter';
+      font-size: 44px;
+      font-weight: 900;
+      letter-spacing: 0.88px;
+      background: linear-gradient(180deg, #E3AA32 20.75%, #FBDF72 46.86%, #B16D17 67.3%, #E4A92D 81.13%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .big {
+        font-size: 94px;
+        line-height: 1;
+      }
+
+      .low {
+        font-size: 38px;
+      }
+    }
+
+    .cardText {
+      color: #FFF;
+      text-align: center;
+      text-shadow: 0px 0px 2px #000;
+      font-family: 'Inter';
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 0.4px;
+    }
+
+    &.sport {
+      border-radius: 16px;
+      border: 2px solid #FF5A0F;
+      background: radial-gradient(75.67% 68.3% at 50% 31.7%, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(180deg, rgba(255, 90, 15, 0.46) 0%, rgba(255, 177, 39, 0.46) 100%);
+      box-shadow: 0px 0px 40px 0px #9D2F03 inset, 0px 0px 60px 0px #FF5000;
+      backdrop-filter: blur(15px);
+
+      .cardTitle {
+        background: radial-gradient(75.67% 68.3% at 50% 31.7%, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(180deg, rgba(255, 90, 15, 0.8) 0%, rgba(255, 177, 39, 0.8) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 8px transparent;
+        color: #FFF;
+      }
+
+      .getItBtn {
+        color: #FFF;
+        text-align: center;
+        font-family: "Inter";
+        font-size: 32px;
+        font-weight: 900;
+        text-transform: uppercase;
+        display: flex;
+        padding: 16px 0px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 8px;
+        border: 1px solid #F56731;
+        background: linear-gradient(180deg, #F8C6B1 0%, #CB470A 51.56%, #CC4405 100%);
+        box-shadow: 0px 7px 14px 0px #F24F0B;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          animation: buttonAnimation 2s linear infinite;
+        }
+      }
+    }
+
+    &.casino {
+      border-radius: 16px;
+      border: 2px solid #D00AFF;
+      background: radial-gradient(75.67% 68.3% at 50% 31.7%, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(180deg, rgba(81, 0, 85, 0.46) 0%, rgba(144, 6, 153, 0.46) 100%);
+      box-shadow: 0px 0px 40px 0px #7D028D inset, 0px 0px 60px 0px #D105D8;
+      backdrop-filter: blur(15px);
+
+      .cardTitle {
+        background: radial-gradient(75.67% 68.3% at 50% 31.7%, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(180deg, rgba(81, 0, 85, 0.8) 0%, rgba(144, 6, 153, 0.8) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 8px transparent;
+        color: #FFF;
+      }
+
+      .getItBtn {
+        color: #FFF;
+        text-align: center;
+        font-family: "Inter";
+        font-size: 32px;
+        font-weight: 900;
+        text-transform: uppercase;
+        display: flex;
+        padding: 16px 0px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        border-radius: 8px;
+        border: 1px solid #93468D;
+        background: linear-gradient(180deg, #D6B8DA 0%, #74277D 51.56%, #5D0F66 100%);
+        box-shadow: 0px 7px 14px 0px #801885;
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          animation: buttonAnimation 2s linear infinite;
+        }
+      }
+    }
+
+    .rulesLink {
+      color: #FFF;
+      text-align: center;
+      font-family: 'Inter';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      text-decoration-line: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.closeBtnModal {
+  display: none;
+}
+
+.rules {
+
+  h3 {
+    color: #1E232D;
+    font-family: 'Inter';
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .closeBtn {
+      display: flex;
+      width: 28px;
+      height: 28px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      background: rgba(30, 35, 45, 0.05);
+      backdrop-filter: blur(1px);
+      transition: .3s;
+      
+      &:hover {
+        background: rgba(30, 35, 45, 0.1);
+      }
+    }
+  }
+
+  p {
+    color: #1E232D;
+    font-family: 'Fira Sans';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin: 0;
+    margin-bottom: 24px;
+  }
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
