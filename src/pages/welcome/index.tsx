@@ -39,22 +39,46 @@ const IndexPage = () => {
           <div className={styles.cards}>
             <div className={classNames(styles.card, styles.sport)}>
               <div className={styles.cardTitle}>{t("sportBonus")}</div>
+              <div className={styles.shortHr}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="106" height="2" viewBox="0 0 106 2" fill="none">
+                  <path d="M1 1H105" stroke="url(#paint0_linear_27589_13919)" stroke-linecap="round"/>
+                  <defs>
+                    <linearGradient id="paint0_linear_27589_13919" x1="1.4" y1="1" x2="105.4" y2="1.00016" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#B94C20" stop-opacity="0"/>
+                      <stop offset="0.505208" stop-color="#AD451B"/>
+                      <stop offset="1" stop-color="#C15124" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
               <div className={styles.cardTextBig}>
                 <div className={styles.medium}>{t("bonus")}</div>
                 <div className={styles.big}>+125%</div>
               </div>
               <div className={styles.cardText}>{t("firstDeposit")}</div>
-              <a href="" className={styles.getItBtn}>{t("getIt")}</a>
+              <a href="/registration?autob=WELCOME_SPORT" className={styles.getItBtn}>{t("getIt")}</a>
               <a onClick={() => setOpenModal("sport")} className={styles.rulesLink}>{t("rules")}</a>
             </div>
             <div className={classNames(styles.card, styles.casino)}>
               <div className={styles.cardTitle}>{t("casinoBonus")}</div>
+              <div className={styles.shortHr}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="106" height="2" viewBox="0 0 106 2" fill="none">
+                  <path d="M1 1H105" stroke="url(#paint0_linear_27589_13904)" stroke-linecap="round"/>
+                  <defs>
+                    <linearGradient id="paint0_linear_27589_13904" x1="1.4" y1="1" x2="105.4" y2="1.00016" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#912191" stop-opacity="0"/>
+                      <stop offset="0.505208" stop-color="#841D84"/>
+                      <stop offset="1" stop-color="#9C229C" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
               <div className={styles.cardTextBig}>
                 <div className={styles.medium}>{t("bonus")} +125%</div>
                 <div className={styles.low}>+{t("25Frispins")}</div>
               </div>
               <div className={styles.cardText}>{t("firstDeposit")}</div>
-              <a href="" className={styles.getItBtn}>{t("getIt")}</a>
+              <a href="/registration?autob=WELCOME_CASINO" className={styles.getItBtn}>{t("getIt")}</a>
               <a onClick={() => setOpenModal("casino")} className={styles.rulesLink}>{t("rules")}</a>
             </div>
           </div>

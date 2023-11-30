@@ -3,7 +3,6 @@
 
 .main {
   position: relative;
-  padding-top: 300px;
 
   &.openModal {
     position: fixed;
@@ -76,11 +75,14 @@
 
 .content {
   max-width: 1000px;
-  padding-bottom: 130px;
   margin: auto;
   text-align: center;
   position: relative;
   z-index: 1;
+
+  @include media("tablet", "laptop", "desktop") {
+    padding-bottom: 130px;
+  }
 
   .logo {
 
@@ -105,14 +107,8 @@
   .title1,
   .title2 {
     font-family: 'Inter';
-    font-size: 26px;
-    font-weight: 900;
     text-transform: uppercase;
     color: #FFF;
-
-    @include media("tablet", "laptop", "desktop") {
-      font-size: 58px;
-    }
   }
   .title1 {
     background: linear-gradient(180deg, #FFF 39.06%, #C0C0C0 100%);
@@ -120,24 +116,52 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     column-gap: 20px;
+    font-size: 24px;
+    font-weight: 700;
+
+    @include media("tablet") {
+      font-size: 58px;
+    }
+
+    @include media("laptop", "desktop") {
+      flex-direction: row;
+      font-size: 58px;
+    }
   }
 
   .title2 {
-    font-size: 40px;
+    font-size: 16px;
+    font-weight: 700;
     text-shadow: 0px 4px 90px #000, 0px 4px 90px #000, 0px 4px 90px #000;
+
+    @include media("tablet", "laptop", "desktop") {
+      font-size: 40px;
+    }
   }
 }
 
 .cards {
-  max-width: 850px;
-  margin: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  padding: 60px 0;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: 'casino'
+                       'sport';
+  gap: 375px;
+  padding: 240px 0 60px;
+
+  @include media("tablet", "laptop", "desktop") {
+    max-width: 850px;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'sport casino';
+    grid-template-rows: 100%;
+    padding: 60px 0;
+    gap: 30px;
+  }
 
   .card {
     display: flex;
@@ -149,34 +173,50 @@
     .cardTitle {
       text-align: center;
       font-family: 'Inter';
-      font-size: 44px;
+      font-size: 36px;
       font-weight: 900;
       letter-spacing: 0.88px;
+
+      @include media("tablet", "laptop", "desktop") {
+        font-size: 44px;
+      }
     }
 
     .cardTextBig {
       text-align: center;
       font-family: 'Inter';
-      font-size: 44px;
+      font-size: 38px;
       font-weight: 900;
       letter-spacing: 0.88px;
       background: linear-gradient(180deg, #E3AA32 20.75%, #FBDF72 46.86%, #B16D17 67.3%, #E4A92D 81.13%);
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      min-height: 150px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
 
+      @include media("laptop", "desktop") {
+        font-size: 44px;
+        min-height: 150px;
+      }
+
       .big {
-        font-size: 94px;
+        font-size: 86px;
         line-height: 1;
+
+        @include media("laptop", "desktop") {
+          font-size: 94px;
+        }
       }
 
       .low {
-        font-size: 38px;
+        font-size: 30px;
+
+        @include media("laptop", "desktop") {
+          font-size: 38px;
+        }
       }
     }
 
@@ -193,6 +233,7 @@
     }
 
     &.sport {
+      grid-area: sport;
       border-radius: 16px;
       border: 2px solid #FF5A0F;
       background: radial-gradient(75.67% 68.3% at 50% 31.7%, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(180deg, rgba(255, 90, 15, 0.46) 0%, rgba(255, 177, 39, 0.46) 100%);
@@ -234,6 +275,7 @@
     }
 
     &.casino {
+      grid-area: casino;
       border-radius: 16px;
       border: 2px solid #D00AFF;
       background: radial-gradient(75.67% 68.3% at 50% 31.7%, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.00) 100%), linear-gradient(180deg, rgba(81, 0, 85, 0.46) 0%, rgba(144, 6, 153, 0.46) 100%);
