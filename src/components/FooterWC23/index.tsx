@@ -43,7 +43,7 @@ const FooterWC23 = () => {
           <a href={t("instagram")} target="_blank"><InstagramIcon /></a>
           <a href={t("telegram")} target="_blank"><TelegramIcon /></a>
           <a href={t("facebook")} target="_blank"><FBIcon /></a>
-          <a href={t("twitter")} target="_blank"><TwitterIcon /></a>
+          {/* <a href={t("twitter")} target="_blank"><TwitterIcon /></a> */}
         </div>
       </div>
       <div className={styles.copyright}>Copyright {new Date().getFullYear()}</div>

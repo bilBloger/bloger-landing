@@ -17,8 +17,8 @@ const HeaderWelcome = () => {
         </div>
         <div className={styles.controls}>
           {/* <LanguagePicker /> */}
-          <a href="https://bilbet.com/?login=1" className={styles.login}>{t("loginBtn")}</a>
-          <a href={`https://bilbet.com/m-landings${language !== 'en' ? `/${language}` : ''}/registration`} 
+          <a href="/?login=1" className={styles.login}>{t("loginBtn")}</a>
+          <a href={`${language !== 'en' ? `/${language}` : ''}/registration`} 
             className={styles.register}>
               {t("registerBtn")}
           </a>
