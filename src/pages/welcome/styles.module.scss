@@ -4,10 +4,10 @@
 .main {
   position: relative;
 
-  &.openModal {
-    position: fixed;
-    width: 100%;
-  }
+  // &.openModal {
+  //   position: fixed;
+  //   width: 100%;
+  // }
 
   @include media("tablet", "laptop", "desktop") {
     padding-top: 90px;
