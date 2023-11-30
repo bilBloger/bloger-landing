@@ -11,7 +11,7 @@ interface LogoProps {
 const Logo = ({ className, href }: LogoProps) => {
   return (
     <svg
-      onClick={() => window.location.href = href || "https://bilbet.com/"}
+      onClick={() => window.location.href = href || "/"}
       className={classNames(styles.logo, className)}
       width="400"
       height="127"

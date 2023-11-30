@@ -101,7 +101,7 @@
 
   @include media("tablet", "laptop", "desktop") {
     max-width: 1000px;
-    padding: 60px 0 36px;
+    padding: 0px 0 36px;
   }
 
   .title1,
@@ -159,7 +159,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: 'sport casino';
     grid-template-rows: 100%;
-    padding: 60px 0;
+    padding: 0 0 60px;
     gap: 30px;
   }
 
@@ -173,7 +173,7 @@
     .cardTitle {
       text-align: center;
       font-family: 'Inter';
-      font-size: 36px;
+      font-size: 34px;
       font-weight: 900;
       letter-spacing: 0.88px;
 
@@ -185,7 +185,7 @@
     .cardTextBig {
       text-align: center;
       font-family: 'Inter';
-      font-size: 38px;
+      font-size: 36px;
       font-weight: 900;
       letter-spacing: 0.88px;
       background: linear-gradient(180deg, #E3AA32 20.75%, #FBDF72 46.86%, #B16D17 67.3%, #E4A92D 81.13%);
