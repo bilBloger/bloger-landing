@@ -7,6 +7,7 @@ import SEO from "../../components/SEO";
 import SimpleModal from "../../components/atoms/SimpleModal";
 import classNames from "classnames";
 import HeaderWelcome from "../../components/HeaderWelcome";
+import { useLocation } from '@reach/router'
 
 import '../../styles/globals.scss'
 import * as styles from './styles.module.scss'
@@ -15,7 +16,8 @@ import Logo from "../../components/atoms/Logo";
 const IndexPage = () => {
   const { t } = useTranslation("welcome")
   const [openModal, setOpenModal] = React.useState<"sport" | "casino" | null>(null)
-
+  const location = useLocation()
+  
   return (
     <main className={classNames(styles.main, {[styles.openModal]: openModal })}>
       <SEO
@@ -55,7 +57,7 @@ const IndexPage = () => {
                 <div className={styles.medium}>{t("bonus")}</div>
                 <div className={styles.big}>+125%</div>
               </div>
-              <div className={styles.cardText}>{t("firstDeposit")}</div>
+              <div className={styles.cardText}>{t(location?.origin === "https://bilbet24.com" ? "firstDepositBdt" : "firstDeposit")}</div>
               <a href="/registration?autob=WELCOME_SPORT" className={styles.getItBtn}>{t("getIt")}</a>
               <a onClick={() => setOpenModal("sport")} className={styles.rulesLink}>{t("rules")}</a>
             </div>
@@ -77,7 +79,7 @@ const IndexPage = () => {
                 <div className={styles.medium}>{t("bonus")} +125%</div>
                 <div className={styles.low}>+{t("25Frispins")}</div>
               </div>
-              <div className={styles.cardText}>{t("firstDeposit")}</div>
+              <div className={styles.cardText}>{t(location?.origin === "https://bilbet24.com" ? "firstDepositBdt" : "firstDeposit")}</div>
               <a href="/registration?autob=WELCOME_CASINO" className={styles.getItBtn}>{t("getIt")}</a>
               <a onClick={() => setOpenModal("casino")} className={styles.rulesLink}>{t("rules")}</a>
             </div>
