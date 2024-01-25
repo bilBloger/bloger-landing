@@ -2,6 +2,7 @@ import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import { Trans, useTranslation } from "gatsby-plugin-react-i18next";
 import * as React from "react"
+import Cookies from "js-cookie";
 import FooterWC23 from "../../components/FooterWC23";
 import SEO from "../../components/SEO";
 import SimpleModal from "../../components/atoms/SimpleModal";
@@ -17,6 +18,8 @@ const IndexPage = () => {
   const { t } = useTranslation("welcome")
   const [openModal, setOpenModal] = React.useState<"sport" | "casino" | null>(null)
   const location = useLocation()
+
+  const notActiveSession = () => !Cookies.get('auth._token.local') || Cookies.get('auth._token.local') === 'false'
   
   return (
     <main className={classNames(styles.main, {[styles.openModal]: openModal })}>
@@ -26,7 +29,7 @@ const IndexPage = () => {
         pathname="/welcome"
       />
 
-      <HeaderWelcome />
+      <HeaderWelcome hideBtns={!notActiveSession()} />
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.title}>
@@ -58,7 +61,7 @@ const IndexPage = () => {
                 <div className={styles.big}>+125%</div>
               </div>
               <div className={styles.cardText}>{t(location?.origin === "https://bilbet24.com" ? "firstDepositBdt" : "firstDeposit")}</div>
-              <a href="/registration?autob=WELCOME_SPORT" className={styles.getItBtn}>{t("getIt")}</a>
+              <a href={notActiveSession() ? "/registration?autob=WELCOME_SPORT" : "/rules?ruleId=421"} className={styles.getItBtn}>{t("getIt")}</a>
               <a onClick={() => setOpenModal("sport")} className={styles.rulesLink}>{t("rules")}</a>
             </div>
             <div className={classNames(styles.card, styles.casino)}>
@@ -80,7 +83,7 @@ const IndexPage = () => {
                 <div className={styles.low}>+{t("25Frispins")}</div>
               </div>
               <div className={styles.cardText}>{t(location?.origin === "https://bilbet24.com" ? "firstDepositBdt" : "firstDeposit")}</div>
-              <a href="/registration?autob=WELCOME_CASINO" className={styles.getItBtn}>{t("getIt")}</a>
+              <a href={notActiveSession() ? "/registration?autob=WELCOME_CASINO" : "/rules?ruleId=421"} className={styles.getItBtn}>{t("getIt")}</a>
               <a onClick={() => setOpenModal("casino")} className={styles.rulesLink}>{t("rules")}</a>
             </div>
           </div>

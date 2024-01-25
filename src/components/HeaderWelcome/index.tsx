@@ -5,7 +5,7 @@ import Logo from "../atoms/Logo"
 import * as styles from './styles.module.scss'
 
 
-const HeaderWelcome = () => {
+const HeaderWelcome = ({ hideBtns }: { hideBtns?: boolean }) => {
   const { t } = useTranslation()
   const {language} = useI18next()
 
@@ -17,11 +17,13 @@ const HeaderWelcome = () => {
         </div>
         <div className={styles.controls}>
           {/* <LanguagePicker /> */}
-          <a href="/?login=1" className={styles.login}>{t("loginBtn")}</a>
-          <a href={`${language !== 'en' ? `/${language}` : ''}/registration`} 
-            className={styles.register}>
-              {t("registerBtn")}
-          </a>
+          {!hideBtns && (<>
+            <a href="/?login=1" className={styles.login}>{t("loginBtn")}</a>
+            <a href={`${language !== 'en' ? `/${language}` : ''}/registration`} 
+              className={styles.register}>
+                {t("registerBtn")}
+            </a>
+          </>)}
         </div>
       </div>
     </div>
